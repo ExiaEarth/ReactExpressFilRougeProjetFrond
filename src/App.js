@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import Header from './containers/header';
 import NavBar from './containers/nav-bar/nav-bar';
+import { Drawer} from "@mui/material";
 
 function App() {
 
@@ -13,7 +14,9 @@ function App() {
   return (
     <>
     <Header onOpenMenu={()=>setMenuVisible(true)}/>
-    <NavBar isVisible={menuVisible} onCloseMenu={()=>setMenuVisible(false)}/>
+    <Drawer anchor="left" open={menuVisible} onClose={()=>setMenuVisible(false)}>
+      <NavBar />
+    </Drawer>
       <main className="App">
 
       </main>

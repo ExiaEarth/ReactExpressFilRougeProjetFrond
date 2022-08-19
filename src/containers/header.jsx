@@ -7,11 +7,11 @@ const Header=({onOpenMenu})=>{
 
     return (
         <header>
-            <AppBar position="static">
+            <AppBar position="static" >
                 <Toolbar>
                     <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}
                     onClick={onOpenMenu}>
-                                <MenuIcon/>
+                        <MenuIcon/>
                     </IconButton>
                     <Typography variant="h5" component="div"  className={style.navBar}>
                         Menus
