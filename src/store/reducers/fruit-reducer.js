@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { addFruit, expireFruit, removeFruit } from "../action/fruit-action";
+import { addFruit, clearFruit, expireFruit, removeFruit } from "../action/fruit-action";
 const inialState={
     fruits:[],
     msg:'Initial'
@@ -25,8 +25,11 @@ const fruitReducer = createReducer(inialState,(builder)=>{
         state.fruits[targerIndex].expire=true;
 
 
+    })
+    .addCase(clearFruit,(state,action)=>{
+        state.fruits=[];
+        state.msg='Clear de monsieur propre';
     });
-
 });
 
 

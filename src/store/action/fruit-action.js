@@ -4,6 +4,7 @@
 //-indiquée si le fruit est périmé
 
 import { nanoid } from "nanoid"
+import {createAction} from '@reduxjs/toolkit'
 
 // action création"oldschool"
 
@@ -24,6 +25,11 @@ import { nanoid } from "nanoid"
 // };
 
 // action création "moderne" (avec le redux Toolkit)
-export const addFruit = creatAction ( 'fruit/add' , ( fruit) => ({ playload : { id : nanoid () ,...fruit } } ) );
-export const removeFruit = creatAction ( 'fruit/remove' );
-export const expireFruit = creatAction ( 'fruit/expire' );
+// ajouter
+export const addFruit = createAction ( 'fruit/add' , ( fruit) => ({ payload : { id : nanoid () ,...fruit } } ) );
+// supprimer
+export const removeFruit = createAction ( 'fruit/remove' );
+// expiration
+export const expireFruit = createAction ( 'fruit/expire' );
+
+export const clearFruit= createAction ('fruit/clear');

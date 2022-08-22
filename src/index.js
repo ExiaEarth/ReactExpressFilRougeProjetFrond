@@ -3,15 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// pour utiliser le routing
 import { BrowserRouter } from 'react-router-dom';
+// Pour utiliser le store
+import store from './store/store';
+import { Provider } from 'react-redux';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
